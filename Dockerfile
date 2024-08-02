@@ -42,5 +42,6 @@ EXPOSE 80
 
 # configure environment for run script
 ENV WEB_USER_ID=33
+ENV WEB_GROUP_ID=33
 
 CMD ["/scripts/run.sh"]
