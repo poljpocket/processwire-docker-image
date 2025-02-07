@@ -1,0 +1,19 @@
+Subject: [PATCH] Improvements to FieldtypePage set of string value(s) to pages, so that it recognizes title and name for setting purposes.
+---
+Index: wire/core/Process.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/wire/core/Process.php b/wire/core/Process.php
+--- a/wire/core/Process.php	(revision f22739a54c8fd8d1ce3e41a9b95e37129f6376b1)
++++ b/wire/core/Process.php	(revision 1805ad0a599156bba34b72e6104abad8d4cd3417)
+@@ -251,6 +251,8 @@
+ 	 *
+ 	 */
+ 	public function ___breadcrumb($href, $label) {
++		if(is_array($label)) return $this;
++		$label = (string) $label;
+ 		$pos = strpos($label, '/'); 
+ 		if($pos !== false && strpos($href, '/') === false) {
+ 			// arguments got reversed, we'll work with it anyway...

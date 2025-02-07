@@ -33,9 +33,8 @@ RUN chmod +x *
 VOLUME /var/www/html/site
 
 # prepare ProcessWire
-ARG PROCESSWIRE_VERSION="master"
 WORKDIR /var/www/html
-RUN /scripts/install.sh $PROCESSWIRE_VERSION
+RUN /scripts/install.sh
 
 # expose web port
 EXPOSE 80
